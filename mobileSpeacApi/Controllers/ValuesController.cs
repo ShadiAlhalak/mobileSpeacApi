@@ -17,11 +17,25 @@ namespace mobileSpeacApi.Controllers
             return new string[] { "value1", "value2" };
         }
 
+
+        //// GET api/values/5
+        //[HttpGet("{id}")]
+        //public string Get(int id)
+        //{
+        //    getSpeac ob = new getSpeac();
+        //    string value = ob.GetSpecById(id);
+        //    return value;
+        //}
+
+
         // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        //[Route("api/values/GetSpeacefactions")]
+        [HttpGet("{Name}")]
+        public List<string> Get(string Name)
         {
-            return "value";
+            getSpeac ob = new getSpeac();
+            List<string> value = ob.GetSpecByName(Name);
+            return value;
         }
 
         // POST api/values
